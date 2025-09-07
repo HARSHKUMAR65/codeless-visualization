@@ -72,7 +72,7 @@ const Welcome = () => {
         {/* Quick Actions */}
         <section className="mb-10">
           <h2 className="mb-4 text-lg font-bold text-slate-800">Quick actions</h2>
-          <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+          <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-2">
             {[
               {
                 title: "Connect a Data Source",
@@ -94,18 +94,7 @@ const Welcome = () => {
                 ),
                 href: "#new-viz",
               },
-              {
-                title: "Use a Template",
-                desc: "Start fast with curated layouts.",
-                icon: (
-                  <svg viewBox="0 0 24 24" className="h-5 w-5">
-                    <rect x="3" y="4" width="7" height="7" rx="2" stroke="currentColor" strokeWidth="2" />
-                    <rect x="14" y="4" width="7" height="7" rx="2" stroke="currentColor" strokeWidth="2" />
-                    <rect x="3" y="13" width="18" height="7" rx="2" stroke="currentColor" strokeWidth="2" />
-                  </svg>
-                ),
-                href: "#templates",
-              },
+              
             ].map((c, i) => (
               <a
                 key={i}

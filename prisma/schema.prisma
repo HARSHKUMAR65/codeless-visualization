@@ -7,12 +7,38 @@ datasource db {
   url      = "mysql://harsh_45:Harsh%401234@db4free.net:3306/testingdb45"
 }
 
+enum DataType {
+  CSV
+  XLS
+  XLSX
+}
+
+// ---------- Models ----------
 model User {
-  id        Int      @id @default(autoincrement())
+  id        Int        @id @default(autoincrement())
   name      String
-  email     String   @unique
+  email     String     @unique
   password  String
   role      String
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  createdAt DateTime   @default(now())
+  updatedAt DateTime   @updatedAt
+
+  // relations
+  data      userData[]
+}
+
+model userData {
+  id           Int        @id @default(autoincrement())
+  userId       Int
+  user         User       @relation(fields: [userId], references: [id], onDelete: Cascade)
+  documentName String
+  dataType     String
+  data         Json
+
+  createdAt    DateTime   @default(now())
+  expiresAt    DateTime?
+
+  @@index([userId, createdAt])
+  @@index([createdAt])
+  @@index([expiresAt])
 }

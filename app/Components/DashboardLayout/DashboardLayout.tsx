@@ -29,9 +29,7 @@ const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
         </div>
         <nav className="p-4 space-y-2">
           <Link href="/welcome" className="block p-2 rounded hover:bg-gray-200">Welcome</Link>
-          <Link href="/dashboard" className="block p-2 rounded hover:bg-gray-200">Home</Link>
-          <Link href="/dashboard/profile" className="block p-2 rounded hover:bg-gray-200">Profile</Link>
-          <Link href="/dashboard/settings" className="block p-2 rounded hover:bg-gray-200">Settings</Link>
+          <Link href="/dashboard" className="block p-2 rounded hover:bg-gray-200">Upload</Link>
           <div  onClick={() => {console.log("logout")}} className="block p-2 rounded hover:bg-gray-200 cursor-pointer" >Logout</div>
         </nav>
       </aside>

@@ -12,7 +12,7 @@ const RegisterSchema = z.object({
   })
 });
 const generateToken = (email: string, role: string): string => {
-  const token = jwt.sign({ email, role }, process.env.JWT_SECRET as string, { expiresIn: '1d' });
+  const token = jwt.sign({ email, role }, process.env.JWT_SECRET as string);
   return token;
 };
 const verifyToken = (token: string): { email: string; role: string } => {

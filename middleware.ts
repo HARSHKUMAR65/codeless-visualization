@@ -11,8 +11,6 @@ export async function middleware(req: NextRequest) {
     return NextResponse.redirect(new URL('/', req.url));
   }
   try {
-    console.log(token);
-    // HS256 (default for jsonwebtoken sign with a string secret)
     if (!process.env.JWT_SECRET) {
       throw new Error('JWT_SECRET environment variable is not set');
     }
@@ -25,7 +23,6 @@ export async function middleware(req: NextRequest) {
 
     return NextResponse.redirect(new URL('/', req.url));
   }
-
 }
 export const config = {
   matcher: ['/dashboard', '/profile', '/Welcome'],

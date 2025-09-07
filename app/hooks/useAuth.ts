@@ -26,7 +26,7 @@ export const useLogin = () => {
         },
         onSuccess: () => {
             queryClient.invalidateQueries({ queryKey: ['user'] });
-            router.push('/Welcome');
+            router.push('/welcome');
         },
     });
 };
